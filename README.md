@@ -12,4 +12,5 @@ The chi-square test relies on the difference between observed and expected value
                 HA : There is a relationship between 2 Categorical Variables
                      i.e., Both the Variables are Dependent of each other.
                      
-![chi-square](https://user-images.githubusercontent.com/42317258/50852656-2f441280-13a6-11e9-8630-24c645cd2951.PNG)
+# ![chi-square](https://user-images.githubusercontent.com/42317258/50852656-2f441280-13a6-11e9-8630-24c645cd2951.PNG)
+![chi2](https://user-images.githubusercontent.com/42317258/50853041-2d2e8380-13a7-11e9-866a-778ffc4136a7.PNG)
