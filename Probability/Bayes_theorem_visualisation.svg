@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-48 -37 288 432">
+ <title>Bayes theorem visualisation</title>
+ <desc>A geometric visualisation of Bayes' theorem by CMG Lee. The thumbnails denote the number of each corresponding condition and case, the probability being the fraction of each thumbnail that is shaded. Similar reasoning can be used to show that P(&#256;|B) = P(B|&#256;) P(&#256;) / P(B) etc.</desc>
+ <style type="text/css">
+  #main { font-family:Helvetica,Arial,sans-serif; font-size:15px; text-anchor:middle;
+          stroke-linejoin:round; stroke-width:1; stroke:#000000; fill:none; }
+  text  { cursor:default; }
+  .a_b      { stroke:#009900; fill:#009900; font-size:16px; }
+  .a_nb     { stroke:#ff6600; fill:#ff6600; font-size:16px; }
+  .na_b     { stroke:#3333ff; fill:#3333ff; font-size:16px; }
+  .na_nb    { stroke:#999999; fill:#999999; font-size:16px; }
+  .label    { stroke:none;    fill:#000000; }
+  .cancel_a { stroke:#ffcc00; }
+  .cancel_b { stroke:#0099ff; }
+  .shade    { fill:#000000; }
+ </style>
+ <defs>
+  <g id="icon_common">
+   <ellipse cx="0" cy="0" rx="6" ry="8" fill-opacity="0.25"/>
+   <circle cx="-2.5" cy="-1" r="0.5"/>
+   <circle cx="2.5"  cy="-1" r="0.5"/>
+   <path d="M -2,4 a 3,3 0 0 0 4,0"/>
+  </g>
+  <g id="icon_a" fill="none">
+   <ellipse cx="-3" cy="-1.5" rx="3" ry="2.5"/>
+   <ellipse cx="3"  cy="-1.5" rx="3" ry="2.5"/>
+  </g>
+  <path id="icon_b"  d="M -5,3 a 5,4.5 0 0 0 10,0 z" fill="none" stroke-width="3"/>
+  <g id="icon_a_b" class="a_b">
+   <use xlink:href="#icon_common"/>
+   <use xlink:href="#icon_a"/>
+   <use xlink:href="#icon_b"/>
+  </g>
+  <g id="icon_a_nb" class="a_nb">
+   <use xlink:href="#icon_common"/>
+   <use xlink:href="#icon_a"/>
+  </g>
+  <g id="icon_na_b" class="na_b">
+   <use xlink:href="#icon_common"/>
+   <use xlink:href="#icon_b"/>
+  </g>
+  <g id="icon_na_nb" class="na_nb">
+   <use xlink:href="#icon_common"/>
+  </g>
+  <g id="a_b">
+   <rect x="0"   y="0"   width="40" height="20"/>
+   <use xlink:href="#icon_a_b" transform="translate(19,10)"/>
+   <use xlink:href="#icon_a_b" transform="translate(32,10)"/>
+   <text x="7"   y="10"  dy="0.7ex" class="a_b">2</text>
+   <text x="-10" y="10"  dy="0.7ex" class="label">A</text>
+   <text x="20"  y="-10" dy="0.7ex" class="label">B</text>
+  </g>
+  <g id="a_nb">
+   <rect x="40"  y="0"   width="60" height="20"/>
+   <use xlink:href="#icon_a_nb" transform="translate(64,10)"/>
+   <use xlink:href="#icon_a_nb" transform="translate(78,10)"/>
+   <use xlink:href="#icon_a_nb" transform="translate(92,10)"/>
+   <text x="50"  y="10"  dy="0.7ex" class="a_nb">3</text>
+   <text x="70"  y="-10" dy="0.7ex" class="label"><tspan>B</tspan><tspan x="70" dy="-1.1em">_</tspan></text>
+  </g>
+  <g id="na_b">
+   <rect x="0"   y="20"  width="40" height="60"/>
+   <use xlink:href="#icon_na_b" transform="translate(19,31)"/>
+   <use xlink:href="#icon_na_b" transform="translate(32,31)"/>
+   <use xlink:href="#icon_na_b" transform="translate(19,50)"/>
+   <use xlink:href="#icon_na_b" transform="translate(32,50)"/>
+   <use xlink:href="#icon_na_b" transform="translate(19,69)"/>
+   <use xlink:href="#icon_na_b" transform="translate(32,69)"/>
+   <text x="7"   y="50"  dy="0.7ex" class="na_b">6</text>
+   <text x="-10" y="50"  dy="0.7ex" class="label"><tspan>A</tspan><tspan x="-10" dy="-1em">_</tspan></text>
+  </g>
+  <g id="na_nb">
+   <rect x="40"  y="20"  width="60" height="60"/>
+   <use xlink:href="#icon_na_nb" transform="translate(64,31)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(78,31)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(92,31)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(64,50)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(78,50)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(92,50)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(64,69)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(78,69)"/>
+   <use xlink:href="#icon_na_nb" transform="translate(92,69)"/>
+   <text x="50"  y="50"  dy="0.7ex" class="na_nb">9</text>
+  </g>
+  <path id="cancel" d="M -20,5 L 20,-5" stroke-width="2"/>
+ </defs>
+ <circle cx="0" cy="0" r="99999" fill="#ffffff"/>
+ <g id="main">
+  <g transform="translate(57,0)">
+   <path d="M -90, 0 H 160 M   0,-32 V 98
+            M -90,20 H 160 M  40,-32 V 98
+            M -90,80 H 160 M 100,-32 V 98" stroke="#cccccc"/>
+   <use xlink:href="#a_b"/>
+   <use xlink:href="#a_nb"/>
+   <use xlink:href="#na_b"/>
+   <use xlink:href="#na_nb"/>
+   <g class="label">
+    <text x="-45" y="-28" dy="0.7ex"><tspan>Number of</tspan><tspan x="-45" dy="1em">occurences</tspan></text>
+    <text x="20"  y="-30" dy="0.7ex">case</text>
+    <text x="70"  y="-30" dy="0.7ex">case</text>
+    <text x="130" y="-20" dy="0.7ex">sum</text>
+    <text x="130" y="10"  dy="0.7ex">5</text>
+    <text x="130" y="50"  dy="0.7ex">15</text>
+    <text x="130" y="90"  dy="0.7ex">20</text>
+    <text x="70"  y="90"  dy="0.7ex">12</text>
+    <text x="20"  y="90"  dy="0.7ex">8</text>
+    <text x="-45" y="90"  dy="0.7ex">sum</text>
+    <text x="-20" y="50"  dy="0.7ex" text-anchor="end">condition</text>
+    <text x="-20" y="10"  dy="0.7ex" text-anchor="end">condition</text>
+   </g>
+  </g>
+
+  <g transform="translate(0,165)">
+   <g>
+    <g transform="scale(0.5) translate(-50,-100)">
+     <use xlink:href="#a_b" class="shade"/>
+     <use xlink:href="#a_nb"/>
+    </g>
+    <g class="label">
+     <use class="cancel_a" xlink:href="#cancel" transform="translate(0,40)"/>
+     <text x="0"  y="0"  dy="0.7ex">P(B, given A)</text>
+     <text x="55" y="0"  dy="0.7ex">&#183;</text>
+     <text x="35" y="30" dy="0.7ex">&#183;</text>
+     <text x="0"  y="20" dy="0.7ex"><tspan class="a_b">2</tspan><tspan x="0">___</tspan
+      ><tspan x="-1ex" dy="1.1em" class="a_b">2</tspan><tspan x="0">+</tspan
+      ><tspan x="1ex" class="a_nb">3</tspan></text>
+    </g>
+   </g>
+   <g transform="translate(80,0)">
+    <g transform="scale(0.5) translate(-50,-100)">
+     <use xlink:href="#a_b"  class="shade"/>
+     <use xlink:href="#a_nb" class="shade"/>
+     <use xlink:href="#na_b"/>
+     <use xlink:href="#na_nb"/>
+    </g>
+    <g class="label">
+     <use class="cancel_a" xlink:href="#cancel" transform="translate(0,23)"/>
+     <text x="0"  y="0"  dy="0.7ex">P(A)</text>
+     <text x="50" y="0"  dy="0.7ex">=</text>
+     <text x="50" y="25" dy="0.7ex">=</text>
+     <text x="0"  y="20" dy="0.7ex"><tspan class="a_b">2</tspan><tspan>+</tspan><tspan class="a_nb">3</tspan
+      ><tspan x="0">_______</tspan><tspan x="-3ex" dy="1.1em" class="a_b">2</tspan><tspan x="-2ex">+</tspan
+      ><tspan x="-1ex" class="a_nb">3</tspan><tspan x="0">+</tspan><tspan x="1ex" class="na_b">6</tspan
+      ><tspan x="2ex">+</tspan><tspan x="3ex" class="na_nb">9</tspan></text>
+    </g>
+   </g>
+   <g transform="translate(190,0)">
+    <g transform="scale(0.5) translate(-50,-100)">
+     <use xlink:href="#a_b"  class="shade"/>
+     <use xlink:href="#a_nb"/>
+     <use xlink:href="#na_b"/>
+     <use xlink:href="#na_nb"/>
+    </g>
+    <g class="label">
+     <text x="0" y="0"  dy="0.7ex">P(B|A) &#183; P(A)</text>
+     <text x="0" y="20" dy="0.7ex"><tspan class="a_b">2</tspan
+      ><tspan x="0">_______</tspan><tspan x="-3ex" dy="1.1em" class="a_b">2</tspan><tspan x="-2ex">+</tspan
+      ><tspan x="-1ex" class="a_nb">3</tspan><tspan x="0">+</tspan><tspan x="1ex" class="na_b">6</tspan
+      ><tspan x="2ex">+</tspan><tspan x="3ex" class="na_nb">9</tspan></text>
+    </g>
+   </g>
+  </g>
+
+  <g transform="translate(0,285)">
+   <g>
+    <g transform="scale(0.5) translate(-50,-100)">
+     <use xlink:href="#a_b" class="shade"/>
+     <use xlink:href="#na_b"/>
+    </g>
+    <g class="label">
+     <use class="cancel_b" xlink:href="#cancel" transform="translate(0,40)"/>
+     <text x="0"  y="0"  dy="0.7ex">P(A, given B)</text>
+     <text x="55" y="0"  dy="0.7ex">&#183;</text>
+     <text x="35" y="30" dy="0.7ex">&#183;</text>
+     <text x="0"  y="20" dy="0.7ex"><tspan class="a_b">2</tspan><tspan x="0">___</tspan
+      ><tspan x="-1ex" dy="1.1em" class="a_b">2</tspan><tspan x="0">+</tspan
+      ><tspan x="1ex" class="na_b">6</tspan></text>
+    </g>
+   </g>
+   <g transform="translate(80,0)">
+    <g transform="scale(0.5) translate(-50,-100)">
+     <use xlink:href="#a_b"  class="shade"/>
+     <use xlink:href="#a_nb"/>
+     <use xlink:href="#na_b" class="shade"/>
+     <use xlink:href="#na_nb"/>
+    </g>
+    <g class="label">
+     <use class="cancel_b" xlink:href="#cancel" transform="translate(0,23)"/>
+     <text x="0"  y="0"  dy="0.7ex">P(B)</text>
+     <text x="50" y="0"  dy="0.7ex">=</text>
+     <text x="50" y="25" dy="0.7ex">=</text>
+     <text x="0"  y="20" dy="0.7ex"><tspan class="a_b">2</tspan><tspan>+</tspan><tspan class="na_b">6</tspan
+      ><tspan x="0">_______</tspan><tspan x="-3ex" dy="1.1em" class="a_b">2</tspan><tspan x="-2ex">+</tspan
+      ><tspan x="-1ex" class="a_nb">3</tspan><tspan x="0">+</tspan><tspan x="1ex" class="na_b">6</tspan
+      ><tspan x="2ex">+</tspan><tspan x="3ex" class="na_nb">9</tspan></text>
+    </g>
+   </g>
+   <g transform="translate(190,0)">
+    <g transform="scale(0.5) translate(-50,-100)">
+     <use xlink:href="#a_b"  class="shade"/>
+     <use xlink:href="#a_nb"/>
+     <use xlink:href="#na_b"/>
+     <use xlink:href="#na_nb"/>
+    </g>
+    <g class="label">
+     <text x="0" y="0"  dy="0.7ex">P(A|B) &#183; P(B)</text>
+     <text x="0" y="20" dy="0.7ex"><tspan class="a_b">2</tspan
+      ><tspan x="0">_______</tspan><tspan x="-3ex" dy="1.1em" class="a_b">2</tspan><tspan x="-2ex">+</tspan
+      ><tspan x="-1ex" class="a_nb">3</tspan><tspan x="0">+</tspan><tspan x="1ex" class="na_b">6</tspan
+      ><tspan x="2ex">+</tspan><tspan x="3ex" class="na_nb">9</tspan></text>
+    </g>
+   </g>
+  </g>
+
+  <g transform="translate(0,350)">
+   <g transform="translate(190,0)" class="label">
+    <text x="-120" y="0"  dy="0.7ex">P(A|B) &#183; P(B)</text>
+    <text x="-60"  y="0"  dy="0.7ex">=</text>
+    <text x="0" y="0"  dy="0.7ex">P(B|A) &#183; P(A)</text>
+    <text x="-120" y="25" dy="0.7ex"><tspan>&#8756;</tspan><tspan dx="4ex">P(A|B)</tspan></text>
+    <text x="-60"  y="25" dy="0.7ex">=</text>
+    <text x="0" y="20" dy="0.7ex"><tspan>P(B|A) &#183; P(A)</tspan
+     ><tspan x="0">__________</tspan><tspan x="0" dy="1.1em">P(B)</tspan></text>
+   </g>
+  </g>
+ </g>
+</svg>
